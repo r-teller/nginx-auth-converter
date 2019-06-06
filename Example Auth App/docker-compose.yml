@@ -1,0 +1,14 @@
+ExampleApp:
+    image: nginx:latest
+    ports:
+        - "8080:80"
+    volumes:
+        - ./default.conf:/etc/nginx/conf.d/default.conf
+    links:
+        - ExampleAppPHP
+ExampleAppPHP:
+    image: php:fpm
+    volumes:
+        - ./login.php:/code/login.php
+        - ./logout.php:/code/logout.php
+        - ./index.php:/code/index.php
