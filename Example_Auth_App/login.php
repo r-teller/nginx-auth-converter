@@ -81,7 +81,7 @@
             <?php
                 $msg = '';
 
-                if (isset($_POST['login']) && !empty($_POST['username'])
+                if (!empty($_POST['username'])
                     && !empty($_POST['password'])) {
 
                     if ($_POST['username'] == 'admin' &&
@@ -91,9 +91,13 @@
                         $_SESSION['username'] = 'admin';
 
                         echo 'You have entered valid use name and password';
-                    }else {
+                    } else {
                         $msg = 'Wrong username or password';
                     }
+                } elseif ($_SESSION['valid'] == true) {
+                    $msg = 'You are already logged in';
+                } else {
+                    $msg = 'Welcome to the login page';
                 }
             ?>
         </div> <!-- /container -->
