@@ -12,3 +12,4 @@ ExampleAppPHP:
         - ./login.php:/code/login.php
         - ./logout.php:/code/logout.php
         - ./index.php:/code/index.php
+        - ./echo.php:/code/echo.php
