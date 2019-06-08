@@ -1,9 +1,10 @@
-AuthConverter:
-    image: nginx:latest
-    ports:
-        - "80:80"
-    volumes:
-        - ./nginx.conf:/etc/nginx/nginx.conf
-        - ./nginx.js:/etc/nginx/nginx.js
-    links:
-        - ExampleApp
+version: '3.4'
+services:
+    AuthConverter:
+        image: nginx:latest
+        ports:
+            - "80:80"
+        volumes:
+            - ./nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx.js:/etc/nginx/nginx.js
+        network_mode: host
